@@ -13,15 +13,15 @@ export function About() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             About Me
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Get to know more about my background, interests, and what drives my
             passion for software development.
           </p>
         </motion.div>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -32,7 +32,7 @@ export function About() {
               whileHover={{ scale: 1.02 }}
               src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop"
               alt="Software development workspace with code editor"
-              className="rounded-lg shadow-lg dark:shadow-blue-200/20 w-full h-64 object-cover"
+              className="rounded-lg shadow-lg dark:shadow-blue-200/20 w-full h-48 sm:h-64 object-cover"
             />
           </motion.div>
           <motion.div
@@ -53,10 +53,10 @@ export function About() {
                   <UserIcon className="text-blue-600 dark:text-blue-400" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2">
                     Who I Am
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300">
                     A recent Software Engineer graduate with a strong foundation
                     in programming fundamentals and a passion for learning new
                     technologies. I enjoy solving complex problems and creating
@@ -75,10 +75,10 @@ export function About() {
                   <CodeIcon className="text-blue-600 dark:text-blue-400" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2">
                     What I Do
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300">
                     I specialize in full-stack web development using modern
                     technologies like React, Node.js, and Python. I'm also
                     experienced in database design, API development, and version
@@ -97,10 +97,10 @@ export function About() {
                   <TargetIcon className="text-blue-600 dark:text-blue-400" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-2">
                     My Goals
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300">
                     I'm looking to join a dynamic team where I can contribute to
                     meaningful projects, continue learning, and grow as a
                     software engineer while making a positive impact through

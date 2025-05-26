@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Sansika Kodithuwakku</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+                text-shadow: 0 0 0 #0ff;
+            }
+            20% {
+                transform: translate(-2px, 2px);
+                text-shadow: 2px 2px 0 #f0f;
+            }
+            40% {
+                transform: translate(-2px, -2px);
+                text-shadow: 2px -2px 0 #0ff;
+            }
+            60% {
+                transform: translate(2px, 2px);
+                text-shadow: -2px 2px 0 #f0f;
+            }
+            80% {
+                transform: translate(2px, -2px);
+                text-shadow: -2px -2px 0 #0ff;
+            }
+            100% {
+                transform: translate(0);
+                text-shadow: 0 0 0 #f0f;
+            }
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        .spinning {
+            animation: spin 20s linear infinite;
+        }
+        .glitch {
+            animation: glitch 1s linear infinite;
+            position: relative;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00ff;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #00ffff;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite;
+        }
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes glitch-anim {
+            0% { clip: rect(31px, 9999px, 94px, 0); }
+            5% { clip: rect(70px, 9999px, 71px, 0); }
+            10% { clip: rect(75px, 9999px, 77px, 0); }
+            15% { clip: rect(14px, 9999px, 82px, 0); }
+            20% { clip: rect(1px, 9999px, 91px, 0); }
+            25% { clip: rect(86px, 9999px, 30px, 0); }
+            30% { clip: rect(23px, 9999px, 29px, 0); }
+            35% { clip: rect(19px, 9999px, 83px, 0); }
+            40% { clip: rect(40px, 9999px, 73px, 0); }
+            45% { clip: rect(95px, 9999px, 30px, 0); }
+            50% { clip: rect(15px, 9999px, 65px, 0); }
+            55% { clip: rect(25px, 9999px, 23px, 0); }
+            60% { clip: rect(69px, 9999px, 49px, 0); }
+            65% { clip: rect(6px, 9999px, 46px, 0); }
+            70% { clip: rect(82px, 9999px, 38px, 0); }
+            75% { clip: rect(54px, 9999px, 27px, 0); }
+            80% { clip: rect(28px, 9999px, 99px, 0); }
+            85% { clip: rect(45px, 9999px, 69px, 0); }
+            90% { clip: rect(23px, 9999px, 85px, 0); }
+            95% { clip: rect(54px, 9999px, 84px, 0); }
+            100% { clip: rect(45px, 9999px, 47px, 0); }
+        }
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 100px, 0); }
+            5% { clip: rect(52px, 9999px, 74px, 0); }
+            10% { clip: rect(79px, 9999px, 85px, 0); }
+            15% { clip: rect(75px, 9999px, 5px, 0); }
+            20% { clip: rect(67px, 9999px, 61px, 0); }
+            25% { clip: rect(14px, 9999px, 79px, 0); }
+            30% { clip: rect(1px, 9999px, 66px, 0); }
+            35% { clip: rect(86px, 9999px, 30px, 0); }
+            40% { clip: rect(23px, 9999px, 98px, 0); }
+            45% { clip: rect(85px, 9999px, 72px, 0); }
+            50% { clip: rect(71px, 9999px, 75px, 0); }
+            55% { clip: rect(2px, 9999px, 48px, 0); }
+            60% { clip: rect(30px, 9999px, 16px, 0); }
+            65% { clip: rect(59px, 9999px, 50px, 0); }
+            70% { clip: rect(41px, 9999px, 62px, 0); }
+            75% { clip: rect(2px, 9999px, 82px, 0); }
+            80% { clip: rect(47px, 9999px, 73px, 0); }
+            85% { clip: rect(3px, 9999px, 27px, 0); }
+            90% { clip: rect(26px, 9999px, 55px, 0); }
+            95% { clip: rect(42px, 9999px, 97px, 0); }
+            100% { clip: rect(38px, 9999px, 49px, 0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center overflow-hidden relative">
+    <!-- Stars Background -->
+    <div id="stars" class="absolute inset-0"></div>
+
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <div class="floating">
+            <h1 class="text-9xl font-bold text-blue-500 mb-4 glitch" data-text="404">404</h1>
+            <div class="spinning">
+                <svg class="w-32 h-32 mx-auto text-blue-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+        
+        <h2 class="text-3xl font-semibold mt-8 mb-4 glitch" data-text="Houston, we have a problem!">Houston, we have a problem!</h2>
+        <p class="text-gray-400 mb-8 max-w-md mx-auto pulse">
+            Looks like this page has drifted into space. Let's get you back to safety.
+        </p>
+        
+        <a href="/" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 pulse">
+            Return to Earth
+        </a>
+    </div>
+
+    <script>
+        // Create stars with enhanced animation
+        const starsContainer = document.getElementById('stars');
+        const starCount = 150; // Increased star count
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            
+            // Random position
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            
+            // Random size
+            const size = Math.random() * 2;
+            
+            // Random opacity
+            const opacity = Math.random() * 0.8 + 0.2;
+            
+            // Random animation duration
+            const duration = Math.random() * 3 + 2;
+            
+            star.style.left = `${x}%`;
+            star.style.top = `${y}%`;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.opacity = opacity;
+            star.style.setProperty('--duration', `${duration}s`);
+            
+            starsContainer.appendChild(star);
+        }
+
+        // Add random glitch effect to text
+        function addRandomGlitch() {
+            const glitchElements = document.querySelectorAll('.glitch');
+            glitchElements.forEach(element => {
+                if (Math.random() > 0.7) {
+                    element.style.animation = 'none';
+                    element.offsetHeight; // Trigger reflow
+                    element.style.animation = 'glitch 0.3s linear';
+                }
+            });
+        }
+
+        setInterval(addRandomGlitch, 2000);
+    </script>
+</body>
+</html> 
