@@ -7,7 +7,7 @@ import cvFile from '../assets/cv/CV_Sansika_Kodithuwakku.pdf';
 export function Hero() {
   return <section id="home" className="pt-20 pb-16 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 w-full">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between">
+        <div className="flex flex-col lg:flex-row items-center justify-between text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -18,7 +18,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4"
             >
               Hi, I'm <span className="text-blue-600 dark:text-blue-400">Sansika Kodithuwakku</span>
             </motion.h1>
@@ -26,7 +26,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-6"
+              className="text-xl sm:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-6"
             >
               Full-Stack Developer & Software Engineering Student
             </motion.h2>
@@ -34,7 +34,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
-              className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed"
+              className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed"
             >
               Software Engineer with 2+ years of industry experience as a Full-Stack Developer. 
               Passionate about building sleek frontends with React, JavaScript, TypeScript, and Redux, while crafting 
@@ -45,14 +45,14 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4 mb-8"
+              className="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start"
             >
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href={cvFile}
                 download="CV_Sansika_Kodithuwakku.pdf"
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 text-base sm:text-lg"
               >
                 <DownloadIcon size={20} />
                 Download Resume
@@ -63,7 +63,7 @@ export function Hero() {
                 onClick={() => document.getElementById('contact')?.scrollIntoView({
                   behavior: 'smooth'
                 })}
-                className="border border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 transition-colors"
+                className="border border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 transition-colors text-base sm:text-lg"
               >
                 Contact Me
               </motion.button>
@@ -72,7 +72,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
-              className="flex gap-4"
+              className="flex gap-4 justify-center lg:justify-start"
             >
               <motion.a
                 whileHover={{ scale: 1.2, y: -2 }}
@@ -109,7 +109,7 @@ export function Hero() {
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="w-80 h-80 rounded-full overflow-hidden shadow-xl dark:shadow-blue-700/20 bg-gradient-to-br from-blue-100 to-indigo-200 dark:from-gray-800 dark:to-gray-700 p-4"
+              className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden shadow-xl dark:shadow-blue-700/20 bg-gradient-to-br from-blue-100 to-indigo-200 dark:from-gray-800 dark:to-gray-700 p-4"
             >
               <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
                 <img

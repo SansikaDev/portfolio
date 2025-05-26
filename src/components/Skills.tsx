@@ -68,10 +68,10 @@ export function Skills() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Skills & Technologies
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Here are the technologies and tools I've worked with during my
             studies and personal projects.
           </p>
@@ -86,7 +86,7 @@ export function Skills() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="bg-white dark:bg-gray-900 rounded-lg shadow-md dark:shadow-blue-200/20 p-6"
             >
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
                 {category.title}
               </h3>
               <div className="space-y-4">
@@ -99,10 +99,10 @@ export function Skills() {
                     transition={{ duration: 0.5, delay: skillIndex * 0.1 }}
                   >
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">
+                      <span className="text-gray-700 dark:text-gray-300 font-medium text-base sm:text-lg">
                         {skill.name}
                       </span>
-                      <span className="text-gray-500 dark:text-gray-400 text-sm">
+                      <span className="text-gray-500 dark:text-gray-400 text-sm sm:text-base">
                         {skill.level}%
                       </span>
                     </div>

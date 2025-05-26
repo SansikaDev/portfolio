@@ -79,15 +79,15 @@ export function Contact() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Get In Touch
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             I'm always open to discussing new opportunities and interesting
             projects. Feel free to reach out if you'd like to connect!
           </p>
         </motion.div>
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -95,7 +95,7 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-6">
               Contact Information
             </h3>
             <div className="space-y-6">
@@ -128,8 +128,8 @@ export function Contact() {
                     {item.icon}
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white">{item.title}</h4>
-                    <p className="text-gray-600 dark:text-gray-400">{item.content}</p>
+                    <h4 className="font-semibold text-gray-900 dark:text-white text-base sm:text-lg">{item.title}</h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">{item.content}</p>
                   </div>
                 </motion.div>
               ))}
@@ -141,10 +141,10 @@ export function Contact() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mt-8"
             >
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-4">
+              <h4 className="font-semibold text-gray-900 dark:text-white mb-4 text-base sm:text-lg">
                 Why Work With Me?
               </h4>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+              <ul className="space-y-2 text-gray-600 dark:text-gray-400 text-sm sm:text-base">
                 {[
                   'Fresh perspective and eagerness to learn',
                   'Strong foundation in modern technologies',
@@ -173,7 +173,7 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-6">
               Send Me a Message
             </h3>
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
@@ -193,7 +193,7 @@ export function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400 focus:border-transparent outline-none transition-colors bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                  className="w-full px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400 focus:border-transparent outline-none transition-colors bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 text-sm sm:text-base"
                   placeholder="Enter your name"
                 />
               </motion.div>
@@ -213,7 +213,7 @@ export function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400 focus:border-transparent outline-none transition-colors bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                  className="w-full px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400 focus:border-transparent outline-none transition-colors bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 text-sm sm:text-base"
                   placeholder="Enter your email"
                 />
               </motion.div>
@@ -232,8 +232,8 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400 focus:border-transparent outline-none transition-colors bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 resize-vertical"
+                  rows={4}
+                  className="w-full px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400 focus:border-transparent outline-none transition-colors bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 resize-vertical text-sm sm:text-base"
                   placeholder="Enter your message"
                 ></textarea>
               </motion.div>
@@ -250,23 +250,31 @@ export function Contact() {
                         : 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300'
                     }`}
                   >
-                    {submitStatus.message}
+                    <p className="text-sm sm:text-base">{submitStatus.message}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
                 type="submit"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 disabled={isSubmitting}
-                className={`w-full bg-blue-600 dark:bg-blue-500 text-white px-6 py-3 rounded-lg transition-colors flex items-center justify-center gap-2 ${
-                  isSubmitting
-                    ? 'opacity-75 cursor-not-allowed'
-                    : 'hover:bg-blue-700 dark:hover:bg-blue-600'
-                }`}
+                className={`w-full sm:w-auto bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 text-base sm:text-lg ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
               >
-                <SendIcon size={20} />
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? (
+                  <>
+                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l2-2.647z"></path>
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <SendIcon size={20} />
+                    Send Message
+                  </>
+                )}
               </motion.button>
             </form>
           </motion.div>

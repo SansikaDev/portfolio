@@ -18,7 +18,7 @@ export function App() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="w-full min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300"
+          className="w-full min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 overflow-x-hidden"
         >
           <Header />
           <main className="min-h-[200vh]">

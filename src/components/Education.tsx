@@ -13,10 +13,10 @@ export function Education() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Education & Certifications
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             My academic background and continuous learning journey in computer
             science and software development.
           </p>
@@ -34,7 +34,7 @@ export function Education() {
               <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-lg">
                 <GraduationCapIcon className="text-blue-600 dark:text-blue-400" size={24} />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Education</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">Education</h3>
             </div>
             <div className="space-y-6">
               <motion.div
@@ -44,13 +44,13 @@ export function Education() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="border-l-4 border-blue-600 dark:border-blue-400 pl-4"
               >
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">
                 BSc (Hons) in Information Technology
                 Specialising in Software Engineering
                 </h4>
-                <p className="text-blue-600 dark:text-blue-400 font-medium">Sri Lanka Institute of Information and Technology</p>
-                <p className="text-gray-600 dark:text-gray-400">2021 - 2024</p>
-                <p className="text-gray-700 dark:text-gray-300 mt-2">
+                <p className="text-blue-600 dark:text-blue-400 font-medium text-sm sm:text-base">Sri Lanka Institute of Information and Technology</p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">2021 - 2024</p>
+                <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm sm:text-base">
                   <strong>GPA:</strong> 3.4/4.0
                   <br />
                   <strong>Relevant Coursework:</strong> Data Structures,
@@ -65,12 +65,12 @@ export function Education() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="border-l-4 border-gray-300 dark:border-gray-600 pl-4"
               >
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">
                   Advanced Level
                 </h4>
-                <p className="text-gray-600 dark:text-gray-400 font-medium">Ananda College, Colombo 10</p>
-                <p className="text-gray-600 dark:text-gray-400">2016 - 2020</p>
-                <p className="text-gray-700 dark:text-gray-300 mt-2">
+                <p className="text-gray-600 dark:text-gray-400 font-medium text-sm sm:text-base">Ananda College, Colombo 10</p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">2016 - 2020</p>
+                <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm sm:text-base">
                   <strong>Level:</strong> Passed
                   <br />
                   Biology Stream
@@ -83,12 +83,12 @@ export function Education() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="border-l-4 border-gray-300 dark:border-gray-600 pl-4"
               >
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">
                 Ordinary Level
                 </h4>
-                <p className="text-gray-600 dark:text-gray-400 font-medium">Ananda College, Colombo 10</p>
-                <p className="text-gray-600 dark:text-gray-400">2006 - 2016</p>
-                <p className="text-gray-700 dark:text-gray-300 mt-2">
+                <p className="text-gray-600 dark:text-gray-400 font-medium text-sm sm:text-base">Ananda College, Colombo 10</p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">2006 - 2016</p>
+                <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm sm:text-base">
                   <strong>Level:</strong> Passed
                   <br />
                  
@@ -109,7 +109,7 @@ export function Education() {
                 <div className="bg-green-100 dark:bg-green-900/30 p-3 rounded-lg">
                   <AwardIcon className="text-green-600 dark:text-green-400" size={24} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
                   Certifications
                 </h3>
               </div>
@@ -167,10 +167,10 @@ export function Education() {
                   >
                     <div className="w-2 h-2 bg-green-600 dark:bg-green-400 rounded-full mt-2"></div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white">
+                      <h4 className="font-semibold text-gray-900 dark:text-white text-base sm:text-lg">
                         {cert.title}
                       </h4>
-                      <p className="text-gray-600 dark:text-gray-400 text-sm">
+                      <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
                         {cert.issuer} • {cert.year}
                       </p>
                     </div>
@@ -189,7 +189,7 @@ export function Education() {
                 <div className="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-lg">
                   <BookOpenIcon className="text-purple-600 dark:text-purple-400" size={24} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
                   Achievements
                 </h3>
               </div>
@@ -210,10 +210,10 @@ export function Education() {
                   >
                     <div className="w-2 h-2 bg-purple-600 dark:bg-purple-400 rounded-full mt-2"></div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white">
+                      <h4 className="font-semibold text-gray-900 dark:text-white text-base sm:text-lg">
                         {achievement.title}
                       </h4>
-                      <p className="text-gray-600 dark:text-gray-400 text-sm">
+                      <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
                         {achievement.description}
                       </p>
                     </div>

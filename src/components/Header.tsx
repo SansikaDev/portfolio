@@ -228,7 +228,7 @@ export function Header() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden bg-white dark:bg-gray-800 shadow-lg border-t border-gray-200 dark:border-gray-700 transition-colors duration-300"
+              className="md:hidden fixed inset-x-0 top-[64px] bg-white dark:bg-gray-800 shadow-lg border-t border-gray-200 dark:border-gray-700 transition-colors duration-300 z-50 overflow-y-auto max-h-[calc(100vh-64px)]"
             >
               <div className="flex flex-col space-y-2 p-4">
                 {['home', 'about', 'skills', 'projects', 'education', 'contact'].map((section, index) => (
