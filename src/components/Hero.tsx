@@ -36,7 +36,7 @@ export function Hero() {
               transition={{ delay: 0.4, duration: 0.5 }}
               className="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed"
             >
-              Final-year Software Engineering student with 1.5 years of industry experience as a Full-Stack Developer. 
+              Software Engineer with 2+ years of industry experience as a Full-Stack Developer. 
               Passionate about building sleek frontends with React, JavaScript, TypeScript, and Redux, while crafting 
               efficient backend solutions. Machine Learning enthusiast, coding since 2018, constantly leveling up 
               through self-learning and real-world projects.

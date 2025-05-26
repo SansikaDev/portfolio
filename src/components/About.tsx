@@ -57,7 +57,7 @@ export function About() {
                     Who I Am
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300">
-                    A recent Computer Science graduate with a strong foundation
+                    A recent Software Engineer graduate with a strong foundation
                     in programming fundamentals and a passion for learning new
                     technologies. I enjoy solving complex problems and creating
                     efficient solutions.
