@@ -28,7 +28,7 @@ export function Hero() {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="text-xl sm:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-6"
             >
-              Full-Stack Developer & Software Engineering Student
+              Full-Stack Developer & Software Engineer
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

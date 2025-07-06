@@ -51,7 +51,7 @@ export function Education() {
                 <p className="text-blue-600 dark:text-blue-400 font-medium text-sm sm:text-base">Sri Lanka Institute of Information and Technology</p>
                 <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">2021 - 2024</p>
                 <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm sm:text-base">
-                  <strong>GPA:</strong> 3.4/4.0
+                  <strong>Class:</strong> <span className="text-blue-600 dark:text-blue-400">Second Class Upper Division</span>
                   <br />
                   <strong>Relevant Coursework:</strong> Data Structures,
                   Algorithms, Database Systems, Web Development, Software
