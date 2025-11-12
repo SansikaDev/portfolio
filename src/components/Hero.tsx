@@ -1,7 +1,7 @@
 import React from 'react';
 import { GithubIcon, LinkedinIcon, MailIcon, DownloadIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
-import profileImage from '../assets/images/me.png'; // Add your image here
+import profileImage from '../assets/images/me.webp'; // Add your image here
 import cvFile from '../assets/cv/CV_Sansika_Kodithuwakku.pdf';
 
 export function Hero() {
