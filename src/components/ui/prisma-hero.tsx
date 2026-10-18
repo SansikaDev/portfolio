@@ -13,14 +13,16 @@ function ScrollCompanion() {
   const rawX = useTransform(scrollY, [0, 200, 480, 780], [0, 10, 36, 90]);
   const rawY = useTransform(scrollY, [0, 200, 480, 780], [0, 36, 110, 220]);
   const rawScale = useTransform(scrollY, [0, 520], [1, 0.88]);
+  const rawOpacity = useTransform(scrollY, [0, 360, 680], [1, 1, 0]);
   const x = useSpring(rawX, COMPANION_SPRING);
   const y = useSpring(rawY, COMPANION_SPRING);
   const scale = useSpring(rawScale, COMPANION_SPRING);
+  const opacity = useSpring(rawOpacity, COMPANION_SPRING);
 
   return (
     <motion.div
       className="companion-layer pointer-events-none fixed inset-x-0 bottom-0 z-20 flex h-[46svh] items-end justify-center overflow-visible sm:h-[50svh] lg:inset-x-auto lg:right-[max(-2.5rem,calc((100vw-72rem)/2-12rem))] lg:h-[min(82vh,780px)] lg:justify-end"
-      style={reduceMotion ? undefined : { x, y, scale }}
+      style={reduceMotion ? { opacity } : { x, y, scale, opacity }}
     >
       <img
         src={profileImage}
