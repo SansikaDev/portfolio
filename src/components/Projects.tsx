@@ -1,133 +1,124 @@
-import React from 'react';
-import { ExternalLinkIcon, GithubIcon } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
+import { CLIENT_PRODUCTS, PROJECTS, PROJECT_SWATCHES } from '../lib/site';
+import SwatchAccordion from './ui/swatch-accordion';
 
 export function Projects() {
-  const projects = [{
-    title: 'Fake News Detection System',
-    description: 'A multi-platform application designed to identify and prevent the spread of misinformation using Machine Learning. Features include real-time fake news detection, browser extension for website verification, mobile app for on-the-go verification, and an admin panel for analytics.',
-    image: 'https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?w=600&h=300&fit=crop',
-    technologies: ['React', 'Redux Toolkit', 'Nest.js', 'Machine Learning', 'Docker', 'Jenkins'],
-    github: 'https://github.com/dinuka-dissanayake/rp-project.git',
-    demo: '#'
-  }, {
-    title: 'Clothing Store E-commerce',
-    description: 'A modern full-stack e-commerce platform featuring a Spring Boot backend, React frontend, and Stripe payment integration. Includes user authentication, admin dashboard, product management, and secure payment processing.',
-    image: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=600&h=300&fit=crop',
-    technologies: ['Spring Boot', 'React', 'MongoDB', 'Docker', 'Stripe', 'TypeScript', 'Tailwind CSS'],
-    github: 'https://github.com/SansikaDev/clothing-store-ecommerce.git',
-    demo: '#'
-  }, {
-    title: 'Task Manager Application',
-    description: 'A full-stack task management solution with both web and mobile applications. Features include cross-platform task synchronization, real-time updates, user authentication, and an intuitive interface. The web app provides comprehensive task management, while the mobile app enables on-the-go productivity.',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=300&fit=crop',
-    technologies: ['React', 'React Native', 'TypeScript', 'Node.js', 'MongoDB', 'Redux', 'Express.js'],
-    github: 'https://github.com/SansikaDev/task-manager.git',
-    demo: '#'
-  }, {
-    title: 'Purchase Order Web Application',
-    description: 'A comprehensive web application for managing purchase orders, approvals, and rejections. Features include user dashboards, order tracking, approval workflows, and real-time status updates.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=300&fit=crop',
-    technologies: ['PHP', 'MySQL', 'Tailwind CSS', 'JavaScript'],
-    github: 'https://github.com/SansikaDev/po-web.git',
-    demo: '#'
-  }, {
-    title: 'Delivery Partner Management',
-    description: 'A MERN stack-based delivery management application that streamlines the entire process, providing real-time insights and seamless coordination between stakeholders. Features include order management, cost calculation, driver registration, and performance tracking.',
-    image: 'https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=600&h=300&fit=crop',
-    technologies: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Redux'],
-    github: 'https://github.com/SansikaDev/Delilvery-Manager.git',
-    demo: '#'
-  }, {
-    title: 'FitTrack Mobile Application',
-    description: 'A JAVA-powered mobile application that helps users log exercises, set goals, and stay motivated on their fitness journey. Features include exercise logging, goal setting, and customizable workout routines.',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=300&fit=crop',
-    technologies: ['Java', 'Android', 'SQLite', 'Material Design'],
-    github: 'https://github.com/SansikaDev/My-fitness.git',
-    demo: '#'
-  }];
-
   return (
-    <section id="projects" className="py-16 bg-white dark:bg-gray-900 w-full">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Featured Projects
-          </h2>
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Here are some of the projects I've worked on during my studies and
-            in my free time.
+    <section id="work" className="pine-grain w-full py-24 text-birch sm:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-copper">03 - Work</p>
+        <div className="mt-4 flex flex-wrap items-end justify-between gap-4">
+          <h2 className="font-display text-4xl sm:text-5xl">Shipped for customers.</h2>
+          <p className="max-w-sm text-sm text-birch/60">
+            Travel and trade live first - then the production desks behind them. Hover a strip,
+            or tap a bar on a phone.
           </p>
-        </motion.div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              whileHover={{ y: -5 }}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg dark:shadow-blue-200/20 overflow-hidden hover:shadow-xl transition-shadow"
+        </div>
+
+        <div className="mt-10 grid gap-5 lg:grid-cols-2">
+          {CLIENT_PRODUCTS.map((product) => (
+            <article
+              key={product.title}
+              className="overflow-hidden rounded-[1.5rem] border border-birch/10 bg-birch/[0.04]"
             >
-              <motion.img
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-                src={project.image}
-                alt={project.title}
-                className="w-full h-40 sm:h-48 object-cover"
-              />
-              <div className="p-4 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                  {project.title}
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                  {project.description}
+              <a
+                href={product.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block overflow-hidden"
+              >
+                <img
+                  src={product.image}
+                  alt={`${product.title} homepage`}
+                  className="h-52 w-full object-cover object-top transition-transform duration-300 ease-out group-hover:scale-[1.03] sm:h-64"
+                />
+              </a>
+              <div className="p-5 sm:p-6">
+                <p className="font-mono text-[10px] uppercase tracking-wider text-copper">
+                  {product.kicker}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, techIndex) => (
-                    <motion.span
-                      key={techIndex}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: techIndex * 0.1 }}
-                      className="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-xs sm:text-sm px-2 py-1 rounded-full"
+                <h3 className="mt-1 font-display text-2xl sm:text-3xl">{product.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-birch/65">{product.description}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {product.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-full border border-birch/15 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-birch/55"
                     >
                       {tech}
-                    </motion.span>
+                    </span>
                   ))}
                 </div>
-                <div className="flex gap-3">
-                  <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    href={project.github}
-                    className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm sm:text-base"
-                  >
-                    <GithubIcon size={16} />
-                    Code
-                  </motion.a>
-                  <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    href={project.demo}
-                    className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm sm:text-base"
-                  >
-                    <ExternalLinkIcon size={16} />
-                    Demo
-                  </motion.a>
-                </div>
+                <a
+                  href={product.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex items-center gap-1 text-sm text-birch transition-colors duration-200 hover:text-copper focus-visible:text-copper"
+                >
+                  {product.hrefLabel} <ArrowUpRight size={14} />
+                </a>
               </div>
-            </motion.div>
+            </article>
           ))}
         </div>
+
+        <div className="mt-16 overflow-hidden rounded-[1.6rem]">
+          <SwatchAccordion
+            items={[...PROJECT_SWATCHES]}
+            openItem={1}
+            trigger="hover"
+            direction="auto"
+            numbers
+            scrim
+            textColor="#141414"
+            buttonColor="#12141A"
+            buttonTextColor="#F2F3F6"
+          />
+        </div>
+      </div>
+
+      <div className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+        <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-copper">Side rooms</p>
+        <h3 className="mt-3 font-display text-3xl leading-[0.95] sm:text-4xl">Papers and personal work</h3>
+        <p className="mt-3 max-w-xl text-sm text-birch/55">
+          IEEE, a live board, an LMS, a shop — the rooms I keep next to the job. Same desk. Same
+          way of writing.
+        </p>
+        <ol className="mt-10">
+          {PROJECTS.map((project, index) => (
+            <li key={project.title} className="border-t border-birch/10 last:border-b">
+              <a
+                href={project.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex gap-4 py-6 sm:gap-6 sm:py-7"
+              >
+                <span className="mt-1 shrink-0 font-mono text-[11px] tabular-nums text-copper">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                    <h4 className="font-display text-2xl leading-tight tracking-[-0.03em] transition-colors duration-200 group-hover:text-copper group-focus-visible:text-copper sm:text-[1.75rem]">
+                      {project.title}
+                    </h4>
+                    <p className="font-display text-lg text-copper/90 sm:text-xl">{project.year}</p>
+                  </div>
+                  <p className="mt-3 text-[15px] leading-relaxed text-birch/65">{project.description}</p>
+                  <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.16em] text-birch/40">
+                    {project.technologies.join(' · ')}
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm text-birch/70 transition-colors duration-200 group-hover:text-copper group-focus-visible:text-copper">
+                    {project.hrefLabel}
+                    <ArrowUpRight
+                      size={14}
+                      className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    />
+                  </span>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

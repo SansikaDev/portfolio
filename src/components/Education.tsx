@@ -1,226 +1,140 @@
-import React from 'react';
-import { GraduationCapIcon, AwardIcon, BookOpenIcon } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { CERTIFICATIONS, EDUCATION, LEADERSHIP, PUBLICATIONS } from '../lib/site';
+import InteractiveBook from './ui/interactive-book';
 
 export function Education() {
-  return (
-    <section id="education" className="py-16 bg-gray-50 dark:bg-gray-800 w-full">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Education & Certifications
-          </h2>
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            My academic background and continuous learning journey in computer
-            science and software development.
-          </p>
-        </motion.div>
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Education */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-white dark:bg-gray-900 rounded-lg shadow-md dark:shadow-blue-200/20 p-6"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-lg">
-                <GraduationCapIcon className="text-blue-600 dark:text-blue-400" size={24} />
-              </div>
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">Education</h3>
-            </div>
-            <div className="space-y-6">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="border-l-4 border-blue-600 dark:border-blue-400 pl-4"
-              >
-                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">
-                BSc (Hons) in Information Technology
-                Specialising in Software Engineering
-                </h4>
-                <p className="text-blue-600 dark:text-blue-400 font-medium text-sm sm:text-base">Sri Lanka Institute of Information and Technology</p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">2021 - 2024</p>
-                <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm sm:text-base">
-                  <strong>Class:</strong> <span className="text-blue-600 dark:text-blue-400">Second Class Upper Division</span>
-                  <br />
-                  <strong>Relevant Coursework:</strong> Data Structures,
-                  Algorithms, Database Systems, Web Development, Software
-                  Engineering, Computer Networks
-                </p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="border-l-4 border-gray-300 dark:border-gray-600 pl-4"
-              >
-                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">
-                  Advanced Level
-                </h4>
-                <p className="text-gray-600 dark:text-gray-400 font-medium text-sm sm:text-base">Ananda College, Colombo 10</p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">2016 - 2020</p>
-                <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm sm:text-base">
-                  <strong>Level:</strong> Passed
-                  <br />
-                  Biology Stream
-                </p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="border-l-4 border-gray-300 dark:border-gray-600 pl-4"
-              >
-                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">
-                Ordinary Level
-                </h4>
-                <p className="text-gray-600 dark:text-gray-400 font-medium text-sm sm:text-base">Ananda College, Colombo 10</p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">2006 - 2016</p>
-                <p className="text-gray-700 dark:text-gray-300 mt-2 text-sm sm:text-base">
-                  <strong>Level:</strong> Passed
-                  <br />
-                 
-                </p>
-              </motion.div>
-            </div>
-          </motion.div>
-          {/* Certifications & Achievements */}
-          <div className="space-y-8">
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="bg-white dark:bg-gray-900 rounded-lg shadow-md dark:shadow-blue-200/20 p-6"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-green-100 dark:bg-green-900/30 p-3 rounded-lg">
-                  <AwardIcon className="text-green-600 dark:text-green-400" size={24} />
-                </div>
-                <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
-                  Certifications
-                </h3>
-              </div>
-              <div className="space-y-4">
-                {[
-                  {
-                    title: 'Exploratory Data Analysis for Machine Learning',
-                    issuer: 'IBM',
-                    year: '2024'
-                  },
-                  {
-                    title: 'TypeScript Variables and Data Types',
-                    issuer: 'Coursera',
-                    year: '2023'
-                  },
+  const [bookWidth, setBookWidth] = useState(220);
+  const [openShift, setOpenShift] = useState(0);
 
-                  {
-                    title: 'Cloud Foundations',
-                    issuer: 'Greate Learning',
-                    year: '2023'
-                  },
-                  {
-                    title: 'OOPs in Java',
-                    issuer: 'Greate Learning',
-                    year: '2023'
-                  },
-                  {
-                    title: 'Python for Beginers',
-                    issuer: 'Universiry of Moratuwa',
-                    year: '2023'
-                  },
-                  {
-                    title: 'MongoDB and the Document Model',
-                    issuer: 'MongoDB',
-                    year: '2023'
-                  },
-                  {
-                    title: 'Business Analysis & Process Management',
-                    issuer: 'Coursera',
-                    year: '2023'
-                  },
-                  {
-                    title: 'Business Analysis & Process Management',
-                    issuer: 'Coursera',
-                    year: '2023'
-                  },
-                ].map((cert, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex items-start gap-3"
-                  >
-                    <div className="w-2 h-2 bg-green-600 dark:bg-green-400 rounded-full mt-2"></div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white text-base sm:text-lg">
-                        {cert.title}
-                      </h4>
-                      <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
-                        {cert.issuer} • {cert.year}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white dark:bg-gray-900 rounded-lg shadow-md dark:shadow-blue-200/20 p-6"
+  useEffect(() => {
+    const update = () => {
+      const vw = window.innerWidth;
+      if (vw < 640) {
+        const width = Math.min(168, Math.max(140, Math.floor((vw - 40) / 2)));
+        setBookWidth(width);
+        setOpenShift(width);
+      } else if (vw < 1024) {
+        setBookWidth(230);
+        setOpenShift(115);
+      } else {
+        setBookWidth(340);
+        setOpenShift(170);
+      }
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+
+  const bookHeight = Math.round(bookWidth * 1.5);
+
+  return (
+    <section id="papers" className="paper-grain w-full overflow-x-hidden py-24 text-pine sm:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-copper">05 - Papers & path</p>
+        <h2 className="mt-4 font-display text-4xl leading-[0.95] sm:text-5xl">
+          Two publications. Open the book.
+        </h2>
+        <p className="mt-4 max-w-xl text-pine/65">
+          Tap the volume. Each tap turns a leaf - IEEE ICAC 2024, then the 2023 retail paper. Tap
+          through the last page to close it.
+        </p>
+
+        <div className="mt-12 grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+          <div className="flex min-h-[20rem] items-center justify-center overflow-visible sm:min-h-[28rem] lg:col-span-6">
+            <div
+              className="flex w-full items-center justify-center"
+              style={{ height: bookHeight + 28 }}
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-lg">
-                  <BookOpenIcon className="text-purple-600 dark:text-purple-400" size={24} />
-                </div>
-                <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
-                  Achievements
-                </h3>
-              </div>
-              <div className="space-y-4">
-                {[
-                  {
-                    title: "Dean's List",
-                    description: 'Second Semester 4th Year'
-                  },
-                ].map((achievement, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex items-start gap-3"
-                  >
-                    <div className="w-2 h-2 bg-purple-600 dark:bg-purple-400 rounded-full mt-2"></div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white text-base sm:text-lg">
-                        {achievement.title}
-                      </h4>
-                      <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
-                        {achievement.description}
-                      </p>
-                    </div>
-                  </motion.div>
+              <InteractiveBook
+                width={bookWidth}
+                height={bookHeight}
+                openShift={openShift}
+                borderRadius={8}
+                frontCover="/papers/cover.jpg"
+                innerPages={[
+                  '/papers/ieee-1.jpg',
+                  '/papers/ieee-2.jpg',
+                  '/papers/retail-1.jpg',
+                  '/papers/retail-2.jpg',
+                ]}
+                backCover="/papers/back.jpg"
+                shadow={{ color: '#12141A', opacity: 0.35, blur: 22, offsetX: 10, offsetY: 16, spread: 0 }}
+              />
+            </div>
+          </div>
+          <div className="lg:col-span-6">
+            <h3 className="font-mono text-[11px] uppercase tracking-wider text-pine/40">The leaves</h3>
+            <ul className="mt-5 space-y-4">
+              {PUBLICATIONS.map((paper) => (
+                <li key={paper.title} className="rounded-2xl border border-pine/10 bg-white/50 p-5">
+                  <p className="font-mono text-[11px] uppercase tracking-wider text-copper">{paper.venue}</p>
+                  <p className="mt-2 font-display text-xl leading-snug">{paper.title}</p>
+                  {paper.href && (
+                    <a
+                      href={paper.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center gap-1 text-sm text-moss hover:text-pine"
+                    >
+                      IEEE Xplore <ArrowUpRight size={14} />
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-16 grid gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <h3 className="font-mono text-[11px] uppercase tracking-wider text-pine/40">Education</h3>
+            <div className="mt-5 space-y-8">
+              {EDUCATION.map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.06 }}
+                  className="border-l-2 border-copper pl-5"
+                >
+                  <p className="font-mono text-[11px] text-pine/40">{item.dates}</p>
+                  <h4 className="mt-1 font-display text-2xl leading-tight">{item.title}</h4>
+                  <p className="mt-1 text-sm text-pine/70">{item.detail}</p>
+                  <p className="text-sm text-pine/50">{item.place}</p>
+                  <p className="mt-2 text-sm text-moss">{item.note}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+          <div className="space-y-10 lg:col-span-7">
+            <div>
+              <h3 className="font-mono text-[11px] uppercase tracking-wider text-pine/40">Leadership</h3>
+              <ul className="mt-4 space-y-3">
+                {LEADERSHIP.map((item) => (
+                  <li key={item.title} className="rounded-xl border border-pine/10 bg-white/40 px-4 py-3">
+                    <p className="font-medium">{item.title}</p>
+                    <p className="text-sm text-pine/55">
+                      {item.place} · {item.dates}
+                    </p>
+                  </li>
                 ))}
-              </div>
-            </motion.div>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-mono text-[11px] uppercase tracking-wider text-pine/40">Certifications</h3>
+              <ul className="mt-4 divide-y divide-pine/10">
+                {CERTIFICATIONS.map((item) => (
+                  <li key={item.title} className="flex justify-between gap-4 py-3 text-sm">
+                    <span>{item.title}</span>
+                    <span className="shrink-0 text-pine/45">{item.issuer}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

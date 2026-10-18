@@ -1,70 +1,37 @@
-import React from 'react';
-import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { SITE } from '../lib/site';
+import { scrollToId } from '../lib/scroll';
 
 export function Footer() {
   return (
-    <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mb-4 md:mb-0"
-          >
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white">Sansika Kodithuwakku</h3>
-            <p className="text-gray-600 dark:text-gray-300">Full-Stack Developer</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex gap-6"
-          >
-            <motion.a
-              whileHover={{ scale: 1.2, y: -2 }}
-              href="https://github.com/SansikaDev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              <GithubIcon size={24} />
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.2, y: -2 }}
-              href="https://www.linkedin.com/in/sansika-kodithuwakku/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              <LinkedinIcon size={24} />
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.2, y: -2 }}
-              href="mailto:sansika.kodi@gmail.com"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              <MailIcon size={24} />
-            </motion.a>
-          </motion.div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 text-center"
-        >
-          <p className="text-gray-600 dark:text-gray-300">
-            © {new Date().getFullYear()} Sansika Kodithuwakku. All rights reserved.
+    <footer className="border-t border-pine/10 bg-birch text-pine">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-10 sm:px-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <button type="button" onClick={() => scrollToId('home')} className="font-display text-3xl">
+            {SITE.name}
+            <span className="text-copper">*</span>
+          </button>
+          <p className="mt-2 text-sm text-pine/50">
+            {SITE.role} · {SITE.city}, {SITE.location}
           </p>
-        </motion.div>
+        </div>
+        <div className="flex flex-wrap gap-5 text-sm text-pine/60">
+          <a href={SITE.github} target="_blank" rel="noopener noreferrer" className="hover:text-pine">
+            GitHub
+          </a>
+          <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-pine">
+            LinkedIn
+          </a>
+          <a href={`mailto:${SITE.email}`} className="hover:text-pine">
+            Email
+          </a>
+          <a href="/CV_Sansika_Kodithuwakku.pdf" download className="hover:text-pine">
+            CV
+          </a>
+        </div>
+      </div>
+      <div className="border-t border-pine/10 py-5 text-center font-mono text-[11px] uppercase tracking-[0.16em] text-pine/40">
+        © {new Date().getFullYear()} {SITE.name}. {SITE.availability}.
       </div>
     </footer>
   );
-} 
+}
