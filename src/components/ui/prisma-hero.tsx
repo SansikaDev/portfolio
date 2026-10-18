@@ -1,42 +1,35 @@
-import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { ArrowDown, ArrowRight } from 'lucide-react';
 import { type CSSProperties } from 'react';
 import profileImage from '../../assets/images/me.webp';
 import { FIGURES, SITE } from '../../lib/site';
 import { scrollToId } from '../../lib/scroll';
 
+const COMPANION_SPRING = { stiffness: 140, damping: 28, mass: 0.35, restDelta: 0.001 };
+
 function ScrollCompanion() {
   const reduceMotion = useReducedMotion();
   const { scrollY } = useScroll();
-  const x = useTransform(scrollY, [0, 200, 480, 780], [0, 10, 36, 90]);
-  const y = useTransform(scrollY, [0, 200, 480, 780], [0, 36, 110, 220]);
-  const opacity = useTransform(scrollY, [0, 420, 720], [1, 1, 0]);
-  const scale = useTransform(scrollY, [0, 520], [1, 0.88]);
+  const rawX = useTransform(scrollY, [0, 200, 480, 780], [0, 10, 36, 90]);
+  const rawY = useTransform(scrollY, [0, 200, 480, 780], [0, 36, 110, 220]);
+  const rawScale = useTransform(scrollY, [0, 520], [1, 0.88]);
+  const x = useSpring(rawX, COMPANION_SPRING);
+  const y = useSpring(rawY, COMPANION_SPRING);
+  const scale = useSpring(rawScale, COMPANION_SPRING);
 
   return (
     <motion.div
-      className="pointer-events-none fixed inset-x-0 bottom-0 z-20 flex h-[46svh] items-end justify-center sm:h-[50svh] lg:inset-x-auto lg:right-[max(-2.5rem,calc((100vw-72rem)/2-12rem))] lg:h-[min(82vh,780px)] lg:justify-end"
-      style={reduceMotion ? undefined : { x, y, opacity, scale }}
+      className="companion-layer pointer-events-none fixed inset-x-0 bottom-0 z-20 flex h-[46svh] items-end justify-center overflow-visible sm:h-[50svh] lg:inset-x-auto lg:right-[max(-2.5rem,calc((100vw-72rem)/2-12rem))] lg:h-[min(82vh,780px)] lg:justify-end"
+      style={reduceMotion ? undefined : { x, y, scale }}
     >
-      <motion.img
+      <img
         src={profileImage}
         alt="Sansika Kodithuwakku, software engineer"
-        className="h-full w-auto max-w-none select-none object-contain object-bottom"
+        className={`h-[calc(100%-0.75rem)] w-auto max-w-none select-none object-contain object-bottom ${
+          reduceMotion ? '' : 'companion-float'
+        }`}
         draggable={false}
-        initial={reduceMotion ? false : { opacity: 0, y: 16 }}
-        animate={
-          reduceMotion
-            ? { opacity: 1, y: 0 }
-            : { opacity: 1, y: [0, -10, 0] }
-        }
-        transition={
-          reduceMotion
-            ? { duration: 0.3 }
-            : {
-                opacity: { duration: 0.45 },
-                y: { duration: 2.4, repeat: Infinity, ease: 'easeInOut' },
-              }
-        }
+        decoding="async"
       />
     </motion.div>
   );
