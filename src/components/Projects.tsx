@@ -81,8 +81,8 @@ export function Projects() {
         <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-copper">Side rooms</p>
         <h3 className="mt-3 font-display text-3xl leading-[0.95] sm:text-4xl">Papers and personal work</h3>
         <p className="mt-3 max-w-xl text-sm text-birch/55">
-          IEEE, a live board, an LMS, a shop — the rooms I keep next to the job. Same desk. Same
-          way of writing.
+          A live settlement desk, IEEE, a board, an LMS, a shop — the rooms I keep next to the
+          job. Same desk. Same way of writing.
         </p>
         <ol className="mt-10">
           {PROJECTS.map((project, index) => (

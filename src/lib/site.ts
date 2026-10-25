@@ -407,6 +407,15 @@ export const PROJECT_SWATCHES = [
 
 export const PROJECTS = [
   {
+    title: 'GL Reconcile',
+    year: 'Live',
+    description:
+      'I built an Angular settlement desk: the day’s payment mix, the full payment book, and a reconcile screen that matches an uploaded processor CSV against what is already in the app. Vitest with a Jest-compatible API, JUnit and coverage on every push, then a production build to Vercel.',
+    technologies: ['Angular', 'Vitest', 'GitHub Actions', 'Vercel'],
+    href: 'https://gl-viewer-eight.vercel.app/login',
+    hrefLabel: 'Open the desk',
+  },
+  {
     title: 'Fake News — Mixture of Experts',
     year: 'IEEE 2024',
     description:
@@ -446,7 +455,7 @@ export const PROJECTS = [
 export const SKILL_GROUPS = [
   {
     title: 'Languages',
-    items: ['Python', 'SQL', 'PHP', 'TypeScript', 'JavaScript', 'Java', 'Kotlin', 'C#', 'C++'],
+    items: ['Python', 'SQL', 'PHP', 'TypeScript', 'JavaScript', 'Java', 'Kotlin', 'C#', 'C++', 'Angular'],
   },
   {
     title: 'Backend',
@@ -454,11 +463,11 @@ export const SKILL_GROUPS = [
   },
   {
     title: 'Data & cloud',
-    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Huawei Cloud', 'AWS S3', 'Docker', 'GitHub Actions'],
+    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Huawei Cloud', 'AWS S3', 'Docker', 'GitHub Actions', 'Vitest'],
   },
   {
     title: 'Interfaces',
-    items: ['React', 'Redux', 'Flutter', 'Android', 'React Native', 'Tailwind CSS'],
+    items: ['React', 'Redux', 'Angular', 'Flutter', 'Android', 'React Native', 'Tailwind CSS'],
   },
 ] as const;
 
