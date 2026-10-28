@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://sansika.info/sitemap.xml
+Sitemap: https://sansika.online/sitemap.xml
