@@ -167,7 +167,7 @@ const PrismaHero = () => {
               </span>
             </button>
             <a
-              href="/CV_Sansika_Kodithuwakku.pdf"
+              href={SITE.cvHref}
               download
               className="text-sm text-pine/70 underline decoration-pine/20 underline-offset-4 hover:text-pine"
             >

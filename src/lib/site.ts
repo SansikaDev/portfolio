@@ -13,6 +13,7 @@ export const SITE = {
   phone: '+358 41 329 8317',
   phoneHref: 'tel:+358413298317',
   url: 'https://sansika.online',
+  cvHref: '/Sansika_Kodithuwakku_CV.pdf',
   github: 'https://github.com/SansikaDev',
   linkedin: 'https://www.linkedin.com/in/sansika-kodithuwakku/',
   availability: 'Available to work - Helsinki or remote',

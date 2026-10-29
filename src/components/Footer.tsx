@@ -24,7 +24,7 @@ export function Footer() {
           <a href={`mailto:${SITE.email}`} className="hover:text-pine">
             Email
           </a>
-          <a href="/CV_Sansika_Kodithuwakku.pdf" download className="hover:text-pine">
+          <a href={SITE.cvHref} download className="hover:text-pine">
             CV
           </a>
         </div>
