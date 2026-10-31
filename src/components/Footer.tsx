@@ -27,6 +27,9 @@ export function Footer() {
           <a href={SITE.cvHref} download className="hover:text-pine">
             CV
           </a>
+          <a href={SITE.vcardHref} className="hover:text-pine">
+            Save contact
+          </a>
         </div>
       </div>
       <div className="border-t border-pine/10 py-5 text-center font-mono text-[11px] uppercase tracking-[0.16em] text-pine/40">

@@ -1,0 +1,19 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//sansika.online//Contact//EN
+N:Kodithuwakku;Sansika;;;
+FN:Sansika Kodithuwakku
+TITLE:Software Engineer
+EMAIL;TYPE=INTERNET,WORK:sansikakodithuwakku07@gmail.com
+TEL;TYPE=CELL,VOICE,PREF:+358413298317
+ADR;TYPE=WORK:;;Helsinki;;;Finland
+URL;TYPE=WORK:https://sansika.online
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/sansika-kodithuwakku/
+URL;TYPE=GitHub:https://github.com/SansikaDev
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/sansika-kodithuwakku/
+X-SOCIALPROFILE;TYPE=github:https://github.com/SansikaDev
+PHOTO;VALUE=URI:https://sansika.online/sansika-kodithuwakku.webp
+NOTE:Available to work - Helsinki or remote. Software engineering and AI engineering.
+REV:20261031T170000Z
+UID:urn:uuid:5d8c1a2b-4e73-4f9a-9c10-8b2e6f4a1d77
+END:VCARD

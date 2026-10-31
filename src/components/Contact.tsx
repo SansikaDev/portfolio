@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { ArrowUpRight, ContactRound, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { SITE } from '../lib/site';
@@ -66,6 +66,12 @@ export function Contact() {
                 label: 'Based',
                 value: `${SITE.city}, ${SITE.location} · remote welcome`,
                 href: undefined,
+              },
+              {
+                icon: ContactRound,
+                label: 'Card',
+                value: 'Save contact',
+                href: SITE.vcardHref,
               },
             ].map((item) => (
               <li key={item.label} className="flex items-center gap-4">
